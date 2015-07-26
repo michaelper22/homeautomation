@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../WEB-INF/template.xhtml">
+
+            <ui:define name="content">
+                <f:view>
+
+
+		    <h:form>
+			<h1><h:outputText value="Create/Edit"/></h1>
+			<h:panelGrid columns="2">
+			    <h:outputLabel value="Description:" for="description" />
+			    <h:inputText id="description" value="#{createSwitchBackingBean.arduinoSwitch.description}" title="Description" />
+			    <h:outputLabel value="Note:" for="note" />
+			    <h:inputText id="note" value="#{createSwitchBackingBean.arduinoSwitch.note}" title="Note" />
+			    <h:outputLabel value="Host name:" for="hostname" />
+			    <h:inputText id="hostname" value="#{createSwitchBackingBean.arduinoSwitch.hostname}" title="Host name" />
+			    <h:outputLabel value="Port:" for="port" />
+			    <h:inputText id="port" value="#{createSwitchBackingBean.arduinoSwitch.port}" title="Port" />
+			    <h:outputLabel value="Pin:" for="pin" />
+			    <h:inputText id="pin" value="#{createSwitchBackingBean.arduinoSwitch.pin}" title="Pin" />
+			    <h:commandButton action="#{createSwitchBackingBean.addSwitch()}" value="Save" />
+			    <h:commandButton action="index" value="Cancel" />
+			</h:panelGrid>
+		    </h:form>
+		</f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
